@@ -19,11 +19,13 @@ NewsRecall:.
 │  08user_embedding_sim.ipynb
 │  09embedding_user_recall.ipynb
 │  10MIND.ipynb
+│  11DSSM.ipynb
 │  main.py
 │  README.md
 │
 └─data
     ├─generate
+    │      dssm_u2i_dict.pkl
     │      embedding_sim_item_recall.pkl
     │      emb_i2i_sim.pkl
     │      itemcf_i2i_sim.pkl
@@ -43,7 +45,6 @@ NewsRecall:.
             articles_emb.csv
             testA_click_log.csv
             train_click_log.csv
-
 ```
 
 ## 召回方案
@@ -55,13 +56,14 @@ NewsRecall:.
 3. embedding_item_recall
    * 根据item的向量相似度计算并召回
 
-2. user_recall
+4. user_recall
    * 根据{item1: [(user1, time1), (user2, time2)...]...}计算user的相似矩阵
    * 根据相似矩阵召回（关联规则）
-3. embedding_item_recall
+5. embedding_item_recall
    * 根据YouTubeDNN步骤中生成的用户部分历史序列的embedding
    * 计算相似度并召回
 6. MIND召回
+7. DSSM召回
 
 ## 数据来源
 
